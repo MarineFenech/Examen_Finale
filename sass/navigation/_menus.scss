@@ -24,6 +24,7 @@
 			}
 
 			li {
+
 				&:hover > ul,
 				&.focus > ul {
 					left: 100%;
@@ -52,6 +53,10 @@
 	li {
 		float: left;
 		position: relative;
+		
+		font-size: 3em;
+		margin-left: 2vw;
+		font-weight: bold;
 
 		&:hover > a,
 		&.focus > a {

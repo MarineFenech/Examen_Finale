@@ -14,14 +14,7 @@
 
 
 // The Query
-$args = array(
-    "category_name" => "Atelier",
-    "posts_per_page" => 10 //afficher les 3 derniere nouvelles "posts_per_page" => "3"
-   // "orderby" =>"date",
-   // "order" => "ASC"
-);
 
-$query1 = new WP_Query( $args );
  
 
 get_header();
