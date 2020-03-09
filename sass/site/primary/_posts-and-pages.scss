@@ -55,7 +55,17 @@ a{
 	margin-left: 5%;
 }
 
-/*.atelierItems {
-	display: flex;
+.atelierItems {
+	display: flex; 
+	flex-direction: row;
+	font-size: 2em;
+	font-family: sans-serif;
+}
 
-}*/
+.postField{
+	color:red;
+}
+
+.author {
+	color: blue;
+}

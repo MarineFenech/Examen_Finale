@@ -9,9 +9,9 @@
 
 $args = array(
     "category_name" => "Atelier",
-    "posts_per_page" => 10 //afficher les 3 derniere nouvelles "posts_per_page" => "3"
-   // "orderby" =>"date",
-   // "order" => "ASC"
+    "posts_per_page" => 10, //afficher les 3 derniere nouvelles "posts_per_page" => "3"
+    "orderby" =>"name",
+    "order" => "ASC"
 );
 
 $query1 = new WP_Query( $args );
@@ -41,13 +41,14 @@ get_header();
                 // The Loop
                 while ( $query1->have_posts() ) {
                     $nb = $nb + 1;
-                    echo '<div class="atelierItems">';
+                    echo '<div class="atelierItems"> <p>'.$nb.'. </p>';
                         $query1->the_post();
-                        echo '<p>'. $nb .'. '. get_the_title() . '</p>';
+                        echo'<p>'. get_the_title() .'____</p>';
+                        echo'<p class="postField">'. get_post_field('post_name') .'</p>';
+                        echo'<p class="author">____'. get_the_author_meta('display_name', $post->post_author ) .'</p>';
                         //the_post_thumbnail( 'thumbnail' );
                     echo '</div>';
                 }
-                
             //endwhile;
                 wp_reset_postdata();
                 echo '</div>';
