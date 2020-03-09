@@ -36,22 +36,42 @@ get_header();
 			</header><!-- .page-header -->
 
 			<?php
-                 echo '<div class="AtelierAlign">';
                 $nb = 0;
                 // The Loop
                 while ( $query1->have_posts() ) {
-                    $nb = $nb + 1;
-                    echo '<div class="atelierItems"> <p>'.$nb.'. </p>';
-                        $query1->the_post();
+                    $heureDebut = substr(get_post_field('post_name'), -2);
+                    if($heureDebut == "08") {
+                        $row = 1;
+                    }
+                    else {
+                        $row = ($heureDebut % 8) + 1;
+                        var_dump($row);
+                    }
+                    
+                    $nom = get_the_author_meta('display_name', $post->post_author );
+                    if($nom == 'Luna'){
+                        $column = 1;
+                    }
+                    else if($nom == 'Eddy'){
+                        $column = 2;
+                    }
+                    else if($nom == 'Derick'){
+                        $column = 3;
+                    }
+                    else if($nom == 'Maybell'){
+                        $column = 4;
+                    }
+
+                    $query1->the_post();
+                    echo'<div class="elm_Atelier" style="grid-area:'.$row.'/'.$column.'">';
                         echo'<p>'. get_the_title() .'____</p>';
                         echo'<p class="postField">'. get_post_field('post_name') .'</p>';
                         echo'<p class="author">____'. get_the_author_meta('display_name', $post->post_author ) .'</p>';
-                        //the_post_thumbnail( 'thumbnail' );
-                    echo '</div>';
+                     echo '</div>';
                 }
             //endwhile;
                 wp_reset_postdata();
-                echo '</div>';
+                //echo '</div>';
 
 		endif;
 		?>

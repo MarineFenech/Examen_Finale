@@ -53,11 +53,11 @@ a{
 	margin-left: 5%;
 }
 
-.atelierItems {
-	display: flex; 
-	flex-direction: row;
-	font-size: 2em;
-	font-family: sans-serif;
+.atelier {
+	display: grid;
+	grid-row:11;
+	grid-column: 4;
+	justify-content: center;
 }
 
 .postField{
@@ -66,4 +66,8 @@ a{
 
 .author {
 	color: blue;
+}
+
+.site-branding {
+	font-size: 2em;
 }

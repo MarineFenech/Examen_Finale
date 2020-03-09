@@ -229,16 +229,16 @@ a {
   margin-left: 5%;
 }
 
-.atelierItems {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
-  font-size: 2em;
-  font-family: sans-serif;
+.atelier {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-row: 11;
+  grid-row: 11;
+  -ms-grid-column: 4;
+  grid-column: 4;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
 }
 
 .postField {
@@ -247,6 +247,10 @@ a {
 
 .author {
   color: blue;
+}
+
+.site-branding {
+  font-size: 2em;
 }
 
 /*--------------------------------------------------------------
